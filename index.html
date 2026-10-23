@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SolusiKorporat - konsultasi strategi, transformasi operasional, dan digitalisasi untuk perusahaan skala menengah hingga besar.">
+<title>SolusiKorporat - Layanan Profesional & Solusi Bisnis Terpadu</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0f172a;--accent:#2563eb;--accent-h:#1d4ed8;--text:#334155;--light:#64748b;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--soft:#eff6ff;--shadow:0 8px 30px rgba(15,23,42,.08)}
+[data-theme=dark]{--primary:#f1f5f9;--accent:#3b82f6;--accent-h:#60a5fa;--text:#cbd5e1;--light:#94a3b8;--bg:#0b1120;--card:#131c31;--border:#243049;--soft:#16233f;--shadow:0 8px 30px rgba(0,0,0,.4)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{color:var(--text);background:var(--bg);line-height:1.65;transition:background .3s,color .3s}
+a{text-decoration:none;color:inherit}ul{list-style:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:2000}
+.top-bar{background:#0f172a;color:#fff;font-size:13px;padding:8px 0}
+.top-bar div{max-width:1200px;margin:auto;display:flex;justify-content:space-between;padding:0 20px;flex-wrap:wrap;gap:6px}
+header{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
+.nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+.logo{font-size:22px;font-weight:800;color:var(--primary)}.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{font-weight:500;font-size:14.5px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600;border:0;cursor:pointer;font-size:15px;transition:.2s}
+.btn:hover{background:var(--accent-h);transform:translateY(-2px)}
+.btn-o{background:transparent;border:2px solid #fff}.btn-o:hover{background:#fff;color:#0f172a!important}
+.icon-btn{background:var(--soft);border:0;border-radius:8px;width:38px;height:38px;cursor:pointer;font-size:17px}
+#burger{display:none}
+.hero{background:linear-gradient(115deg,rgba(15,23,42,.92),rgba(30,64,175,.82)),url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80') center/cover;color:#fff;padding:120px 20px 110px;text-align:center}
+.hero h1{font-size:clamp(30px,5vw,52px);max-width:850px;margin:0 auto 18px;font-weight:800;line-height:1.15}
+.hero p{font-size:18px;max-width:640px;margin:0 auto 30px;color:#cbd5e1}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.typed{color:#93c5fd;border-right:3px solid #93c5fd;padding-right:4px}
+.stats{max-width:1000px;margin:-55px auto 0;position:relative;z-index:2;background:var(--card);border-radius:14px;box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr);padding:30px 10px;text-align:center}
+.stats h3{font-size:36px;color:var(--accent);font-weight:800}.stats p{font-size:14px;color:var(--light)}
+.wrap{max-width:1200px;margin:auto;padding:85px 20px}
+.sh{text-align:center;margin-bottom:46px}
+.sh span{color:var(--accent);font-weight:600;font-size:14px}
+.sh h2{font-size:clamp(25px,3.5vw,34px);color:var(--primary);margin-top:6px}
+.sh p{max-width:580px;margin:10px auto 0;color:var(--light)}
+.grid{display:grid;gap:24px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1fr 1fr}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--accent)}
+.card h3,.card h4{color:var(--primary);margin-bottom:8px}
+.ico{width:54px;height:54px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:26px;margin-bottom:16px}
+.link{color:var(--accent);font-weight:600;background:none;border:0;cursor:pointer;margin-top:12px;font-size:14px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-img{height:400px;border-radius:18px;background:linear-gradient(rgba(37,99,235,.25),rgba(15,23,42,.45)),url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80') center/cover;box-shadow:var(--shadow)}
+.about h2{color:var(--primary);font-size:30px;margin:6px 0 14px}
+.checks li{padding:5px 0 5px 28px;position:relative}.checks li:before{content:"✔";position:absolute;left:0;color:var(--accent);font-weight:700}
+.tabs{display:flex;gap:8px;margin:20px 0 12px;flex-wrap:wrap}
+.tab{padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-weight:600;font-size:14px}
+.tab.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.alt{background:var(--soft)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s}
+.step{background:var(--card);border-radius:14px;padding:24px 18px;text-align:center;border:1px solid var(--border);position:relative}
+.step:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;margin:0 auto 12px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700}
+.step h4{color:var(--primary);font-size:15px}.step p{font-size:13.5px;color:var(--light)}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.chip{background:var(--card);border:1px solid var(--border);border-radius:30px;padding:10px 20px;font-weight:600;color:var(--primary)}
+.filters{display:flex;gap:8px;justify-content:center;margin-bottom:30px;flex-wrap:wrap}
+.proj{padding:0;overflow:hidden}.proj .thumb{height:130px;display:grid;place-items:center;font-size:48px;background:linear-gradient(135deg,#1e40af,#38bdf8)}
+.proj .b{padding:20px}.tag{font-size:12px;background:var(--soft);color:var(--accent);padding:3px 10px;border-radius:20px;font-weight:600}
+.proj .res{color:#16a34a;font-weight:700;font-size:14px;margin-top:6px}
+.price{text-align:center;position:relative}.price.pop{border:2px solid var(--accent)}
+.price .ribbon{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:3px 16px;border-radius:20px;font-size:12px;font-weight:700}
+.amt{font-size:32px;font-weight:800;color:var(--primary);margin:10px 0}.amt small{font-size:14px;font-weight:500;color:var(--light)}
+.price .checks{text-align:left;margin:16px 0 22px}
+.team .av{width:84px;height:84px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font-size:30px;font-weight:700;color:#fff;background:linear-gradient(135deg,#2563eb,#7c3aed)}
+.team{text-align:center}.team span{font-size:13px;color:var(--light)}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+label{font-weight:600;font-size:14px;color:var(--primary);display:block;margin:12px 0 5px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);font-size:15px}
+input[type=range]{padding:0;accent-color:var(--accent)}
+.result{background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;border-radius:14px;padding:30px;text-align:center}
+.result h3{font-size:38px}.result p{color:#dbeafe}
+.slider{position:relative;overflow:hidden}.track{display:flex;transition:transform .5s}
+.slide{min-width:100%;padding:0 6px}
+.t-card{background:var(--card);border-radius:14px;padding:34px;box-shadow:var(--shadow);max-width:760px;margin:auto;text-align:center}
+.t-card p{font-size:18px;font-style:italic;color:var(--primary)}.t-card .stars{color:#f59e0b;letter-spacing:3px;margin-bottom:10px}
+.t-card h4{margin-top:16px;color:var(--primary)}.t-card span{font-size:13px;color:var(--light)}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:20px}
+.dot{width:11px;height:11px;border-radius:50%;border:0;background:var(--border);cursor:pointer}.dot.on{background:var(--accent);width:28px;border-radius:8px}
+.faq{max-width:800px;margin:auto}
+.q{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;background:var(--card);overflow:hidden}
+.q button{width:100%;text-align:left;background:none;border:0;padding:18px 20px;font-weight:600;font-size:16px;color:var(--primary);cursor:pointer;display:flex;justify-content:space-between}
+.q .a{max-height:0;overflow:hidden;transition:max-height .35s;padding:0 20px}.q.open .a{max-height:200px;padding-bottom:18px}.q.open button span{transform:rotate(45deg)}
+.blog .th{height:110px;border-radius:10px;display:grid;place-items:center;font-size:40px;background:var(--soft);margin-bottom:14px}.blog small{color:var(--light)}
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:40px}
+.info div{padding:10px 0;border-bottom:1px solid var(--border)}
+.err{color:#dc2626;font-size:12.5px;min-height:16px}
+.map{margin-top:18px;height:160px;border-radius:12px;background:var(--soft);display:grid;place-items:center;border:1px dashed var(--accent);color:var(--accent);font-weight:600}
+.news{background:var(--primary);color:var(--bg);text-align:center;padding:50px 20px}
+[data-theme=dark] .news{background:#16233f;color:#f1f5f9}
+.news form{display:flex;gap:10px;max-width:480px;margin:18px auto 0}.news input{flex:1}
+footer{background:#0f172a;color:#94a3b8;padding:50px 20px 20px}
+.fg{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
+footer h4{color:#fff;margin-bottom:10px}footer li{padding:3px 0;font-size:14px}footer a:hover{color:#fff}
+.copy{text-align:center;border-top:1px solid #1e293b;margin-top:30px;padding-top:18px;font-size:13px}
+#top,#wa{position:fixed;right:20px;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;font-size:20px;box-shadow:var(--shadow);z-index:900}
+#top{bottom:86px;background:var(--accent);color:#fff;display:none}#wa{bottom:20px;background:#22c55e;color:#fff;display:grid;place-items:center}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.65);display:none;place-items:center;z-index:3000;padding:20px}.modal.show{display:grid}
+.box{background:var(--card);border-radius:16px;padding:32px;max-width:520px;width:100%;position:relative}
+.box .x{position:absolute;top:12px;right:14px;background:none;border:0;font-size:24px;cursor:pointer;color:var(--text)}
+#toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,120px);background:#16a34a;color:#fff;padding:14px 26px;border-radius:10px;transition:.4s;z-index:4000}#toast.show{transform:translate(-50%,0)}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+@media(max-width:960px){.g3,.g4,.steps,.about,.calc,.contact,.fg{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr;gap:18px}.about-img{height:280px}}
+@media(max-width:680px){#burger{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--card);flex-direction:column;padding:20px;border-bottom:1px solid var(--border)}.nav-links.open{display:flex}.g3,.g4,.g2,.steps,.about,.calc,.contact,.fg{grid-template-columns:1fr}.top-bar div span:last-child{display:none}.hero{padding:80px 20px 90px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="top-bar"><div><span>📞 Hubungi Kami: +62 812-3456-7890</span><span>✉️ info@solusikorporat.co.id</span></div></div>
+<header>
+<div class="nav">
+<a href="#home" class="logo">Solusi<span>Korporat</span>.</a>
+<ul class="nav-links" id="menu">
+<li><a href="#home">Beranda</a></li><li><a href="#about">Tentang</a></li><li><a href="#services">Layanan</a></li>
+<li><a href="#portfolio">Portofolio</a></li><li><a href="#pricing">Paket</a></li><li><a href="#team">Tim</a></li><li><a href="#faq">FAQ</a></li>
+<li><a href="#contact" class="btn">Konsultasi Gratis</a></li>
+<li><button class="icon-btn" id="theme" aria-label="Ganti tema">🌙</button></li>
+</ul>
+<button class="icon-btn" id="burger" aria-label="Menu">☰</button>
+</div>
+</header>
+
+<section id="home" class="hero">
+<h1>Transformasi & Akselerasi Pertumbuhan Bisnis <span class="typed" id="typed"></span></h1>
+<p>Konsultasi strategis, transformasi digital, dan manajemen operasional profesional untuk perusahaan skala menengah hingga besar.</p>
+<div class="hero-btns"><a href="#services" class="btn">Jelajahi Layanan</a><a href="#contact" class="btn btn-o">Hubungi Ahli Kami</a></div>
+</section>
+
+<div class="stats rv">
+<div><h3 data-n="10" data-s="+">0</h3><p>Tahun Pengalaman</p></div>
+<div><h3 data-n="250" data-s="+">0</h3><p>Klien Korporat Sukses</p></div>
+<div><h3 data-n="98" data-s="%">0</h3><p>Kepuasan Klien</p></div>
+<div><h3 data-n="35" data-s="%">0</h3><p>Rata-rata Efisiensi Naik</p></div>
+</div>
+
+<section id="about" class="wrap">
+<div class="about">
+<div class="about-img rv"></div>
+<div class="rv">
+<span style="color:var(--accent);font-weight:600;font-size:14px">Tentang Perusahaan</span>
+<h2>Mitra Strategis Terpercaya untuk Kesuksesan Jangka Panjang</h2>
+<p>SolusiKorporat menjawab tantangan bisnis modern dengan keahlian industri mendalam dan pendekatan berbasis data, membantu perusahaan mengoptimalkan efisiensi dan memperluas pangsa pasar.</p>
+<div class="tabs" role="tablist">
+<button class="tab on" data-t="0">Visi</button><button class="tab" data-t="1">Misi</button><button class="tab" data-t="2">Nilai</button>
+</div>
+<div id="tabtxt"></div>
+</div>
+</div>
+</section>
+
+<section id="services" class="wrap alt" style="max-width:none">
+<div style="max-width:1160px;margin:auto">
+<div class="sh rv"><span>Layanan Unggulan</span><h2>Solusi Komprehensif untuk Bisnis Anda</h2><p>Klik "Lihat detail" untuk melihat cakupan kerja, durasi, dan hasil tiap layanan.</p></div>
+<div class="grid g3" id="svc"></div>
+</div>
+</section>
+
+<section class="wrap">
+<div class="sh rv"><span>Cara Kerja</span><h2>Lima Tahap Menuju Hasil Terukur</h2></div>
+<div class="steps rv">
+<div class="step"><h4>Diagnosis</h4><p>Audit kondisi bisnis dan penentuan target.</p></div>
+<div class="step"><h4>Strategi</h4><p>Penyusunan rencana dan peta jalan.</p></div>
+<div class="step"><h4>Implementasi</h4><p>Eksekusi bersama tim internal Anda.</p></div>
+<div class="step"><h4>Pengukuran</h4><p>Pemantauan KPI dan laporan berkala.</p></div>
+<div class="step"><h4>Optimasi</h4><p>Perbaikan berkelanjutan dan transfer ilmu.</p></div>
+</div>
+</section>
+
+<section class="wrap alt" style="max-width:none">
+<div style="max-width:1160px;margin:auto">
+<div class="sh rv"><span>Industri yang Kami Layani</span><h2>Pengalaman Lintas Sektor</h2></div>
+<div class="chips rv"><span class="chip">🏭 Manufaktur</span><span class="chip">🏦 Perbankan & Keuangan</span><span class="chip">🛒 Ritel & E-commerce</span><span class="chip">🚚 Logistik</span><span class="chip">🏥 Kesehatan</span><span class="chip">⚡ Energi</span><span class="chip">🏗️ Properti & Konstruksi</span><span class="chip">🎓 Pendidikan</span></div>
+</div>
+</section>
+
+<section id="portfolio" class="wrap">
+<div class="sh rv"><span>Portofolio</span><h2>Proyek yang Telah Kami Selesaikan</h2></div>
+<div class="filters" id="pf"><button class="tab on" data-f="all">Semua</button><button class="tab" data-f="strategi">Strategi</button><button class="tab" data-f="operasional">Operasional</button><button class="tab" data-f="digital">Digital</button></div>
+<div class="grid g3" id="pg"></div>
+</section>
+
+<section class="wrap alt" style="max-width:none">
+<div style="max-width:1000px;margin:auto">
+<div class="sh rv"><span>Simulasi</span><h2>Hitung Potensi Penghematan Anda</h2><p>Estimasi kasar berdasarkan rata-rata hasil klien kami.</p></div>
+<div class="calc card rv">
+<div>
+<label>Biaya operasional per tahun: <b id="v1">Rp 5 miliar</b></label><input type="range" id="r1" min="1" max="100" value="5">
+<label>Jumlah karyawan: <b id="v2">200</b></label><input type="range" id="r2" min="20" max="2000" step="10" value="200">
+<label for="sel">Fokus layanan</label>
+<select id="sel"><option value="0.18">Transformasi Operasional</option><option value="0.12">Digitalisasi Korporat</option><option value="0.09">Konsultasi Strategi</option></select>
+</div>
+<div class="result"><p>Estimasi penghematan per tahun</p><h3 id="out">Rp 0</h3><p id="out2"></p></div>
+</div>
+</div>
+</section>
+
+<section id="pricing" class="wrap">
+<div class="sh rv"><span>Paket Layanan</span><h2>Pilih Skema Kerja Sama yang Cocok</h2></div>
+<div class="grid g3">
+<div class="card price rv"><h3>Starter</h3><p>Untuk perusahaan yang baru memulai pembenahan.</p><div class="amt">Rp 25 jt<small>/bulan</small></div><ul class="checks"><li>Audit bisnis awal</li><li>1 konsultan senior</li><li>Laporan bulanan</li><li>Dukungan jam kerja</li></ul><a href="#contact" class="btn">Pilih Starter</a></div>
+<div class="card price pop rv"><span class="ribbon">Paling Dipilih</span><h3>Growth</h3><p>Untuk perusahaan yang ingin tumbuh cepat.</p><div class="amt">Rp 65 jt<small>/bulan</small></div><ul class="checks"><li>Semua fitur Starter</li><li>Tim 3 konsultan</li><li>Dashboard KPI real-time</li><li>Workshop tim internal</li><li>Dukungan prioritas</li></ul><a href="#contact" class="btn">Pilih Growth</a></div>
+<div class="card price rv"><h3>Enterprise</h3><p>Untuk transformasi skala besar multi-divisi.</p><div class="amt">Kustom</div><ul class="checks"><li>Semua fitur Growth</li><li>Tim khusus on-site</li><li>Integrasi sistem penuh</li><li>Dukungan 24/7</li><li>Manajer akun pribadi</li></ul><a href="#contact" class="btn">Minta Penawaran</a></div>
+</div>
+</section>
+
+<section id="team" class="wrap alt" style="max-width:none">
+<div style="max-width:1160px;margin:auto">
+<div class="sh rv"><span>Tim Ahli</span><h2>Orang di Balik Hasil Klien Kami</h2></div>
+<div class="grid g4" id="tm"></div>
+</div>
+</section>
+
+<section id="testimonials" class="wrap">
+<div class="sh rv"><span>Testimoni Klien</span><h2>Apa Kata Mereka yang Telah Bekerja Sama</h2></div>
+<div class="slider"><div class="track" id="trk"></div></div>
+<div class="dots" id="dots"></div>
+</section>
+
+<section id="faq" class="wrap alt" style="max-width:none">
+<div style="max-width:1160px;margin:auto">
+<div class="sh rv"><span>FAQ</span><h2>Pertanyaan yang Sering Diajukan</h2></div>
+<div class="faq" id="fq"></div>
+</div>
+</section>
+
+<section id="blog" class="wrap">
+<div class="sh rv"><span>Wawasan</span><h2>Artikel & Analisis Terbaru</h2></div>
+<div class="grid g3 blog">
+<article class="card rv"><div class="th">📈</div><small>12 Okt 2026 · 5 menit baca</small><h3>5 Indikator Bisnis yang Wajib Dipantau Tiap Bulan</h3><p>Dari arus kas hingga produktivitas tim, indikator yang paling menentukan arah perusahaan.</p></article>
+<article class="card rv"><div class="th">🤖</div><small>28 Sep 2026 · 6 menit baca</small><h3>Otomasi Proses: Mulai dari Mana?</h3><p>Panduan memilih proses yang paling cepat memberi pengembalian investasi.</p></article>
+<article class="card rv"><div class="th">🧭</div><small>09 Sep 2026 · 4 menit baca</small><h3>Menyusun Peta Jalan Digital 3 Tahun</h3><p>Langkah praktis agar transformasi digital tidak berhenti di tahap pilot.</p></article>
+</div>
+</section>
+
+<section id="contact" class="wrap alt" style="max-width:none">
+<div style="max-width:1160px;margin:auto">
+<div class="sh rv"><span>Hubungi Kami</span><h2>Mari Diskusikan Kebutuhan Bisnis Anda</h2></div>
+<div class="contact">
+<div class="info"><h3 style="color:var(--primary)">Informasi Kontak</h3><p style="margin:8px 0 14px">Isi formulir atau hubungi kami untuk menjadwalkan sesi konsultasi awal.</p>
+<div>📍 Jl. Jendral Sudirman Kav. 45, Jakarta Selatan</div><div>📞 +62 812-3456-7890</div><div>✉️ info@solusikorporat.co.id</div><div>🕒 Senin - Jumat: 08.00 - 17.00 WIB</div>
+<div class="map">🗺️ Lokasi kantor: Sudirman, Jakarta Selatan</div></div>
+<form class="card" id="form" novalidate>
+<label for="name">Nama Lengkap</label><input id="name" placeholder="Masukkan nama Anda"><div class="err"></div>
+<label for="email">Email Perusahaan</label><input id="email" type="email" placeholder="nama@perusahaan.com"><div class="err"></div>
+<label for="phone">Nomor Telepon / WhatsApp</label><input id="phone" type="tel" placeholder="0812xxxxxxxx"><div class="err"></div>
+<label for="topic">Topik Konsultasi</label><select id="topic"><option>Strategi Bisnis</option><option>Transformasi Operasional</option><option>Digitalisasi</option><option>Lainnya</option></select>
+<label for="msg">Pesan / Detail Kebutuhan <small id="cnt" style="font-weight:400;color:var(--light)">0/500</small></label><textarea id="msg" rows="4" maxlength="500" placeholder="Tuliskan kendala atau proyek yang ingin didiskusikan..."></textarea><div class="err"></div>
+<button class="btn" style="width:100%;margin-top:8px" type="submit">Kirim Pesan Konsultasi</button>
+</form>
+</div>
+</div>
+</section>
+
+<div class="news"><h3>Dapatkan Wawasan Bisnis Setiap Bulan</h3><p>Berlangganan buletin kami. Tanpa spam, berhenti kapan saja.</p>
+<form id="nl"><input type="email" id="nle" placeholder="Email Anda" required><button class="btn">Berlangganan</button></form></div>
+
+<footer>
+<div class="fg">
+<div><h4 style="font-size:20px">SolusiKorporat.</h4><p style="font-size:14px">Mitra terpercaya untuk akselerasi pertumbuhan bisnis dan transformasi digital korporat.</p></div>
+<div><h4>Layanan</h4><ul><li><a href="#services">Strategi Bisnis</a></li><li><a href="#services">Operasional</a></li><li><a href="#services">Digitalisasi</a></li></ul></div>
+<div><h4>Perusahaan</h4><ul><li><a href="#about">Tentang</a></li><li><a href="#team">Tim</a></li><li><a href="#blog">Artikel</a></li></ul></div>
+<div><h4>Bantuan</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#contact">Kontak</a></li><li><a href="#pricing">Paket</a></li></ul></div>
+</div>
+<div class="copy">&copy; 2026 PT Solusi Korporat Indonesia. Hak Cipta Dilindungi.</div>
+</footer>
+
+<button id="top" aria-label="Kembali ke atas">↑</button>
+<a id="wa" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<div class="modal" id="modal"><div class="box"><button class="x" id="mx" aria-label="Tutup">×</button><div id="mb"></div></div></div>
+<div id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const toast=t=>{const e=$('#toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),3200)};
+// Data
+const SVC=[
+['📊','Konsultasi Strategi Bisnis','Arah kebijakan jangka panjang, manajemen risiko, dan ekspansi pasar terukur.','3-6 bulan','Peta jalan 3 tahun, analisis pasar, model risiko','Pertumbuhan pendapatan rata-rata 22%'],
+['⚙️','Transformasi Operasional','Optimasi alur kerja untuk memangkas biaya dan menaikkan produktivitas.','4-8 bulan','Pemetaan proses, standar kerja baru, pelatihan tim','Biaya operasional turun hingga 35%'],
+['💻','Digitalisasi Korporat','Integrasi sistem TI modern dan otomasi proses bisnis.','6-12 bulan','Arsitektur sistem, integrasi ERP/CRM, otomasi','Waktu proses turun hingga 60%'],
+['📉','Analitik & Dashboard Data','Dashboard KPI real-time agar keputusan berbasis data.','2-4 bulan','Data warehouse, dashboard, pelatihan analis','Keputusan 3x lebih cepat'],
+['👥','Manajemen Talenta (HR)','Struktur organisasi, sistem penilaian kinerja, dan pengembangan SDM.','3-6 bulan','Struktur organisasi, KPI individu, program pelatihan','Turnover karyawan turun 28%'],
+['🛡️','Manajemen Risiko & Kepatuhan','Tata kelola, audit internal, dan kesiapan regulasi.','2-5 bulan','Registri risiko, kebijakan, simulasi audit','Temuan audit turun 70%']];
+const PJ=[
+['🏭','Efisiensi Pabrik','PT Maju Sejahtera','operasional','Efisiensi naik 35% dalam 10 bulan'],
+['💳','Platform Layanan Digital','Kreasi Digital Nusantara','digital','Waktu layanan turun 60%'],
+['🌏','Ekspansi Pasar Regional','Graha Solusi Prima','strategi','Masuk 4 kota baru, omzet naik 40%'],
+['🚚','Optimasi Rantai Pasok','Logistik Nusa','operasional','Biaya pengiriman turun 22%'],
+['📱','Aplikasi Mobile Pelanggan','Retailindo','digital','Pengguna aktif naik 3x'],
+['🧩','Restrukturisasi Portofolio','Arta Holding','strategi','Margin naik 8 poin']];
+const TM=[['Andika Pratama','Managing Partner'],['Rina Kusuma','Kepala Strategi'],['Fajar Nugroho','Kepala Digital'],['Maya Lestari','Kepala Operasional']];
+const TS=[
+['Layanan konsultasi dari SolusiKorporat berhasil mendongkrak efisiensi operasional perusahaan kami hingga 35% dalam waktu kurang dari setahun. Sangat profesional!','Budi Santoso','Direktur Operasional, PT Maju Sejahtera'],
+['Proses transformasi digital yang didampingi tim SolusiKorporat berjalan lancar tanpa hambatan berarti. Sistem kerja kami kini jauh lebih cepat dan terstruktur.','Siti Rahmawati','CEO, Kreasi Digital Nusantara'],
+['Wawasan strategis yang diberikan membuka mata kami terhadap peluang pasar baru yang sebelumnya belum tergarap optimal. Mitra bisnis yang luar biasa.','Hendra Wijaya','Managing Director, Graha Solusi Prima']];
+const FQ=[
+['Berapa lama proyek konsultasi berlangsung?','Tergantung cakupan. Umumnya 2 sampai 12 bulan, dengan target dan jadwal yang disepakati di awal.'],
+['Apakah ada sesi konsultasi awal gratis?','Ya. Sesi pertama berdurasi 60 menit untuk memahami masalah dan menentukan arah kerja sama.'],
+['Apakah data perusahaan kami aman?','Semua konsultan terikat perjanjian kerahasiaan (NDA) dan data disimpan dengan akses terbatas.'],
+['Apakah melayani perusahaan di luar Jakarta?','Ya. Kami bekerja di seluruh Indonesia, secara daring maupun kunjungan langsung.'],
+['Bagaimana cara mengukur keberhasilan proyek?','Kami menetapkan KPI bersama di tahap diagnosis dan melaporkannya secara berkala.']];
+const TABS=['Menjadi mitra konsultan pilihan utama perusahaan Indonesia dalam bertumbuh secara berkelanjutan.','Memberikan solusi terukur berbasis data, mendampingi sampai hasil nyata, dan mengalihkan ilmu ke tim klien.','<ul class="checks"><li>Integritas dalam setiap rekomendasi</li><li>Hasil terukur, bukan sekadar laporan</li><li>Kolaborasi dengan tim klien</li></ul>'];
+// Render
+$('#svc').innerHTML=SVC.map((s,i)=>`<div class="card rv"><div class="ico">${s[0]}</div><h3>${s[1]}</h3><p>${s[2]}</p><button class="link" data-i="${i}">Lihat detail</button></div>`).join('');
+$('#pg').innerHTML=PJ.map(p=>`<div class="card proj rv" data-c="${p[3]}"><div class="thumb">${p[0]}</div><div class="b"><span class="tag">${p[3]}</span><h3 style="margin-top:8px">${p[1]}</h3><p>${p[2]}</p><div class="res">${p[4]}</div></div></div>`).join('');
+$('#tm').innerHTML=TM.map(m=>`<div class="card team rv"><div class="av">${m[0][0]}</div><h4>${m[0]}</h4><span>${m[1]}</span></div>`).join('');
+$('#trk').innerHTML=TS.map(t=>`<div class="slide"><div class="t-card"><div class="stars">★★★★★</div><p>"${t[0]}"</p><h4>${t[1]}</h4><span>${t[2]}</span></div></div>`).join('');
+$('#fq').innerHTML=FQ.map(f=>`<div class="q"><button aria-expanded="false">${f[0]}<span>+</span></button><div class="a"><p>${f[1]}</p></div></div>`).join('');
+// Theme
+const root=document.documentElement,sv=localStorage.getItem('theme');
+if(sv){root.dataset.theme=sv;$('#theme').textContent=sv=='dark'?'☀️':'🌙'}
+$('#theme').onclick=()=>{const d=root.dataset.theme=='dark'?'light':'dark';root.dataset.theme=d;localStorage.setItem('theme',d);$('#theme').textContent=d=='dark'?'☀️':'🌙'};
+// Menu
+$('#burger').onclick=()=>$('#menu').classList.toggle('open');
+$$('#menu a').forEach(a=>a.onclick=()=>$('#menu').classList.remove('open'));
+// Typed
+const W=['Anda','Perusahaan Anda','Tim Anda'];let wi=0,ci=0,del=false;
+(function ty(){const w=W[wi];$('#typed').textContent=w.slice(0,ci);ci+=del?-1:1;let t=del?50:110;
+if(!del&&ci>w.length){del=true;t=1400}else if(del&&ci<0){del=false;wi=(wi+1)%W.length;ci=0;t=300}setTimeout(ty,t)})();
+// Tabs about
+function tab(i){$$('.tab[data-t]').forEach(b=>b.classList.toggle('on',b.dataset.t==i));$('#tabtxt').innerHTML=TABS[i].startsWith('<')?TABS[i]:'<p>'+TABS[i]+'</p>'}
+$$('.tab[data-t]').forEach(b=>b.onclick=()=>tab(b.dataset.t));tab(0);
+// Portfolio filter
+$$('#pf .tab').forEach(b=>b.onclick=()=>{$$('#pf .tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('#pg .proj').forEach(c=>c.style.display=b.dataset.f=='all'||c.dataset.c==b.dataset.f?'':'none')});
+// Modal
+$('#svc').onclick=e=>{const b=e.target.closest('.link');if(!b)return;const s=SVC[b.dataset.i];
+$('#mb').innerHTML=`<div class="ico">${s[0]}</div><h3 style="color:var(--primary)">${s[1]}</h3><p style="margin:8px 0">${s[2]}</p><ul class="checks"><li><b>Durasi:</b> ${s[3]}</li><li><b>Cakupan:</b> ${s[4]}</li><li><b>Hasil khas:</b> ${s[5]}</li></ul><a href="#contact" class="btn" style="margin-top:16px" onclick="$('#modal').classList.remove('show')">Konsultasi Layanan Ini</a>`;$('#modal').classList.add('show')};
+$('#mx').onclick=()=>$('#modal').classList.remove('show');
+$('#modal').onclick=e=>{if(e.target.id=='modal')e.target.classList.remove('show')};
+document.onkeydown=e=>{if(e.key=='Escape')$('#modal').classList.remove('show')};
+// FAQ
+$$('.q button').forEach(b=>b.onclick=()=>{const q=b.parentElement,o=q.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+// Slider
+let si=0,tm;const dots=$('#dots');
+dots.innerHTML=TS.map((_,i)=>`<button class="dot" aria-label="Testimoni ${i+1}" data-i="${i}"></button>`).join('');
+function go(i){si=i;$('#trk').style.transform=`translateX(-${i*100}%)`;$$('.dot').forEach((d,j)=>d.classList.toggle('on',j==i))}
+dots.onclick=e=>{if(e.target.dataset.i){go(+e.target.dataset.i);clearInterval(tm)}};
+go(0);tm=setInterval(()=>go((si+1)%TS.length),5500);
+// Calculator
+const rp=n=>'Rp '+n.toLocaleString('id-ID');
+function calc(){const b=+$('#r1').value,k=+$('#r2').value,p=+$('#sel').value;
+$('#v1').textContent='Rp '+b+' miliar';$('#v2').textContent=k;
+const hemat=b*1e9*p;$('#out').textContent=rp(Math.round(hemat/1e6)*1e6);
+$('#out2').textContent='Sekitar '+rp(Math.round(hemat/k/1e5)*1e5)+' per karyawan per tahun'}
+['#r1','#r2','#sel'].forEach(s=>$(s).oninput=calc);calc();
+// Counters + reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
+e.target.querySelectorAll('[data-n]').forEach(h=>{const n=+h.dataset.n;let c=0;const st=Math.max(1,n/60);const id=setInterval(()=>{c=Math.min(n,c+st);h.textContent=Math.round(c)+h.dataset.s;if(c>=n)clearInterval(id)},25)});io.unobserve(e.target)}),{threshold:.15});
+$$('.rv').forEach(e=>io.observe(e));
+// Scroll: progress, top button, active link
+const secs=$$('section[id]'),links=$$('#menu a:not(.btn)');
+addEventListener('scroll',()=>{const h=document.documentElement,p=scrollY/(h.scrollHeight-innerHeight);$('#progress').style.width=p*100+'%';
+$('#top').style.display=scrollY>500?'block':'none';
+let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id});links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')=='#'+cur))});
+$('#top').onclick=()=>scrollTo({top:0});
+// Form validation
+$('#msg').oninput=e=>$('#cnt').textContent=e.target.value.length+'/500';
+$('#form').onsubmit=e=>{e.preventDefault();let ok=true;
+const rules={name:v=>v.trim().length>=3||'Nama minimal 3 karakter',email:v=>/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)||'Format email belum benar',phone:v=>/^(\+62|62|0)8\d{7,12}$/.test(v.replace(/[\s-]/g,''))||'Gunakan nomor Indonesia, contoh 0812xxxxxxxx',msg:v=>v.trim().length>=10||'Pesan minimal 10 karakter'};
+for(const k in rules){const el=$('#'+k),r=rules[k](el.value);el.nextElementSibling.textContent=r===true?'':r;if(r!==true)ok=false}
+if(ok){toast('Terima kasih, '+$('#name').value.split(' ')[0]+'! Tim kami menghubungi Anda dalam 1x24 jam kerja.');e.target.reset();$('#cnt').textContent='0/500'}};
+$('#nl').onsubmit=e=>{e.preventDefault();toast('Berhasil berlangganan buletin kami.');e.target.reset()};
+</script>
+</body>
+</html>
